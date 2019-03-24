@@ -1,0 +1,21 @@
+CODE:
+
+#loading code for hypothesis
+PB1=read.csv("DM_PRJ_Q1.csv", header=TRUE,sep=",")
+
+#getting summary of data
+Summary(PB1)
+
+#mapping column with table
+MILES=PB1$MILES
+
+> summary(MILES)
+> save=sd(MILES)
+
+library(BSDA)
+
+#applying one sample Z test on sample data
+z.test(MILES,NULL,alternative="two.sided",mu=10.4,sigma.x=sd(MILES),conf.level=0.95)
+
+#histogram(MILES,xlab="MILES",ylab="CUSTOMER'S DRIVE")
+
