@@ -1,0 +1,39 @@
+CODE:
+#load business users data
+Business=read.csv("Business_Fare.csv", header=TRUE,sep=",")
+
+# get summary of data loaded
+summary(Business)
+
+#mapping column with data table
+Fare = Business $ Fare
+
+summary(Fare)
+
+# finding standard deviation
+> Fare_sd=sd(Fare)
+> Fare_sd
+
+
+library(psych)
+describe(Fare)	
+
+#Loading personal users data
+Personal Fare:
+Personal=read.csv("Personal_Fare.csv", header=TRUE,sep=",")
+
+# getting summary of loaded data
+summary(Personal)
+
+PFare = Personal $ Fare
+summary(PFare)
+
+> PFare_sd=sd(PFare)
+> PFare_sd
+
+library(psych)
+describe(PFare)	
+
+# Applying independent two sample hypothesis testing 
+
+z.test(B_Fare,P_fare, alternative="two.sided", mu=0,sigma.x=SD(B_FARE),sigma.y=sd(P_fare),conf=0.95
